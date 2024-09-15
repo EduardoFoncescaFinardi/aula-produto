@@ -1,7 +1,7 @@
 package br.com.fiap;
 
-import br.com.fiap.domain.entity.Produto;
-import br.com.fiap.domain.repository.ProdutoRepository;
+import br.com.fiap.domain.entity.ProdutoEstocado;
+import br.com.fiap.domain.view.ProdutoEstocadoView;
 
 import java.util.List;
 
@@ -9,21 +9,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        List<Produto> produtos = ProdutoRepository.findAll();
-//
-//        for (Produto produto : produtos) {
-//            System.out.println( produto );
-//        }
-
-
-//        Produto prod = ProdutoRepository.findById( 8L );
-//
-//        System.out.println(prod);
-
-
-        List<Produto> produtos = ProdutoRepository.findByName( "ipad" );
-
-        produtos.forEach( System.out::println );
+        ProdutoEstocadoView view = new ProdutoEstocadoView();
+        List<ProdutoEstocado> produtoEstocados = view.formEstocar();
+        produtoEstocados.forEach( System.out::println );
 
     }
 }
